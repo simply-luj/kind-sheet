@@ -695,11 +695,12 @@ export default function SheetPreview({
                                                         {edges.bottom && <div className={cn("absolute bottom-[-1px] left-[-1px] right-[-1px] h-[2px]", theme.selectionBorder)} />}
                                                         {edges.left && <div className={cn("absolute top-[-1px] left-[-1px] bottom-[-1px] w-[2px]", theme.selectionBorder)} />}
                                                         {edges.right && <div className={cn("absolute top-[-1px] right-[-1px] bottom-[-1px] w-[2px]", theme.selectionBorder)} />}
-                                                        {edges.isCorner && (
+                                                        {edges.isCorner && !isPickingTarget && (
                                                             <div
                                                                 onMouseDown={handleFillMouseDown}
                                                                 onDragStart={(e) => e.preventDefault()}
-                                                                className={cn("absolute bottom-[-4px] right-[-4px] w-2.5 h-2.5 border border-white rounded-[1px] z-20 cursor-crosshair shadow-sm pointer-events-auto", theme.selectionBorder)}
+                                                                className={cn("absolute bottom-[-4px] right-[-4px] w-2 h-2 z-20 cursor-crosshair shadow-sm pointer-events-auto", theme.selectionBorder)}
+                                                                style={{ border: '1px solid white' }}
                                                             />
                                                         )}
                                                     </div>

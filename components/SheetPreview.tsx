@@ -699,8 +699,15 @@ export default function SheetPreview({
                                                             <div
                                                                 onMouseDown={handleFillMouseDown}
                                                                 onDragStart={(e) => e.preventDefault()}
-                                                                className={cn("absolute bottom-[-4px] right-[-4px] w-2 h-2 z-20 cursor-crosshair shadow-sm pointer-events-auto", theme.selectionBorder)}
-                                                                style={{ border: '1px solid white' }}
+                                                                // Force absolute positioning, size, and z-index as requested
+                                                                className={cn("absolute z-50 cursor-crosshair shadow-sm pointer-events-auto", theme.selectionBorder)}
+                                                                style={{
+                                                                    right: '-5px',
+                                                                    bottom: '-5px',
+                                                                    width: '10px',
+                                                                    height: '10px',
+                                                                    border: '1px solid white'
+                                                                }}
                                                             />
                                                         )}
                                                     </div>
